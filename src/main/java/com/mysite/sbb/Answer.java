@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,5 +25,7 @@ public class Answer {
 
     private LocalDateTime createDate;
 
+    @ManyToOne
     private Question question;
+    // 여러개의 답변 엔티티 속성이 하나의 질문 엔티티에 연결됨을 의미.
 }
